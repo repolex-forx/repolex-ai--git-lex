@@ -6,29 +6,27 @@ RDF knowledge graph data for [repolex-ai/git-lex](https://github.com/repolex-ai/
 
 ## How to use this data
 
-The easiest way to get started is to install the [lexq](https://github.com/repolex-ai/lexq) query tool using [uv](https://docs.astral.sh/uv/getting-started/installation/).
-
-If you have uv installed, just copy/paste this into your terminal:
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
 
 ```bash
-uv tool install git+https://github.com/repolex-ai/lexq
+cargo install --git https://github.com/repolex-ai/rlex
 ```
 
-This installs lexq onto your system, in your user context. Verify the install:
+Verify the install:
 
 ```bash
-lexq --help
+rlex --help
 ```
 
-**lexq is designed to be used primarily by LLMs in a terminal.** Start up your favorite LLM and ask it to use the lexq tool. It's that easy!
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
 
 To load this repo's data:
 
 ```bash
-lexq download repolex-ai/git-lex
+rlex download repolex-ai/git-lex
 ```
 
-This will automatically download essential data files from the last parsed commit. Consult `lexq --moreinfo` for other options, including downloading multiple commits, blobs, etc.
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
 
 ## Data structure
 
@@ -50,11 +48,13 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
 │           └── chunk-001.nq.gz
 └── blob
     ├── 00866109f4a4d69cef0aadccb46362bb98392c9a.nq.gz
+    ├── 00a489a92ff98ee7bdee3f5baa3065d96db91873.nq.gz
     ├── 016e539fcd441436a19dedf86c0a972852cb8073.nq.gz
     ├── 0208815566ea09eb90fc6033ef749ff60c76f87b.nq.gz
     ├── 0222fc0587d2e8c3d0e8ce760b1cb2983902a951.nq.gz
     ├── 02803c64cf6cdf0a0e13e0961395bff075a747e0.nq.gz
     ├── 03d72533b2a07d1b742dbeb071066a097819b492.nq.gz
+    ├── 04258ea1e1fb36cf569680162eacfdb7be6f262b.nq.gz
     ├── 0437cd015f1d0e6a5531bd3681dd45341f226154.nq.gz
     ├── 061b0a3adc577a194a31cda09184e3c88aae1cd9.nq.gz
     ├── 063050f0c43d4d4d72305620f2cca69e7a81e98f.nq.gz
@@ -67,6 +67,7 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
     ├── 0d6362a5a03b2a92926cc5b46424bcea14294782.nq.gz
     ├── 0ed6bda2a3e20cb2d95eddab86a98267840c7655.nq.gz
     ├── 0f16ddd98afdcbcc8264a28a48c64bfd1bce7d65.nq.gz
+    ├── 0f8d8605f983612ed2aceed7372f422207874f6c.nq.gz
     ├── 108b026030924f4827b3fff61f5d79b60d37e138.nq.gz
     ├── 12273867390dd8533640a3370c5573e5dcf0168a.nq.gz
     ├── 13f2e7c8371aacda848a95400b57b6086e1be904.nq.gz
@@ -79,6 +80,7 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
     ├── 1d570a74cc30adf48ab4e0266eed1fb3d77465c5.nq.gz
     ├── 1d8544629876d424b33fa0ffc21dc631bfbdbcaa.nq.gz
     ├── 1eb39e5dcda9c19c23487fe13f8a515d23be70fc.nq.gz
+    ├── 208cf8803ce961ff0f7789b1dac0c01233ca3d8d.nq.gz
     ├── 2179caa759c3369ed209df50d96aa4915f6cc98a.nq.gz
     ├── 233f83bcd5ea370f5a0bea69f39794517099b7a2.nq.gz
     ├── 2427667e2df6aab7669cba0b4bd47200eec97fa3.nq.gz
@@ -94,6 +96,7 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
     ├── 349d858d6fb2ea82f5e29f7d79aa5d683fdab80d.nq.gz
     ├── 356f1f43b2569a829c0f28ca121b0824196640b8.nq.gz
     ├── 35ea1138df65b2248dd17301445feee2ce4a948a.nq.gz
+    ├── 3695dce11b155555ba218776032651472ec34547.nq.gz
     ├── 3762d766823e1ddf44e7036c0ac6c4326749426d.nq.gz
     ├── 37c5a767daada44a37191fba60063934a79e2a10.nq.gz
     ├── 3852e06955db2f1dc572a78cbad8df6e7f9167cd.nq.gz
@@ -104,11 +107,13 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
     ├── 3e2f207fbffd0864d30bfcc59eff4a9ee44bce99.nq.gz
     ├── 408f2a823cc34ca87b8e62377622f0469c3f10b4.nq.gz
     ├── 4106f11ed826a16a5558c8980c64d2177071cab8.nq.gz
+    ├── 4134ebbb108469f688b4cdf7425da5f902d4604c.nq.gz
     ├── 41a84e828d595a160a731952009ed23271223a48.nq.gz
     ├── 41c3ba9cd82a615f67ef6b46fa899716f892e506.nq.gz
     ├── 42497b8b79b06e4daeb8a15501ba30dc623d9650.nq.gz
     ├── 4298d701082eea670484b52274859f9b5519b946.nq.gz
     ├── 42ae741a98f0e57d0f6b4e41156e86ecdda11b50.nq.gz
+    ├── 42f3c3b67df8d2e1130afb33ef968044fc6e591f.nq.gz
     ├── 43809ad8edb56e6dabf654b27bd04b92a24d67d8.nq.gz
     ├── 459d879f5f79270d530f320327ed8e8317952fbf.nq.gz
     ├── 4667e3e2ae98b0911c619f29edd45ccaf3ca2d74.nq.gz
@@ -129,6 +134,7 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
     ├── 59fc944c9eef1328a545b0274228a6d234fd5a57.nq.gz
     ├── 5da94781de7ed2228f03dff09145a028563747d8.nq.gz
     ├── 5e03f7426c78904c9581bb0131801103170e19cd.nq.gz
+    ├── 602437d774fe680aa74cb5ef4a983297e20548a8.nq.gz
     ├── 62d9aa065e0ec4684972edc08120749a13cec44d.nq.gz
     ├── 6407059f5293930d53fdd3b57f5ecd931d2542b3.nq.gz
     ├── 656c6a5c542d7b9138d8ccb8d5c6a0545a59bb53.nq.gz
@@ -144,19 +150,23 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
     ├── 6d1978d9d40b3d89832b149b7d6a67c3da6f56d4.nq.gz
     ├── 6f2c440c91b0047a87a19a69c642b9934419bdf1.nq.gz
     ├── 6f2db13ff7a727baf81e884f220492e4fef988ff.nq.gz
+    ├── 701750f08b391632181f0a48aa1af3bedb96b322.nq.gz
     ├── 72430bdb952dd68b13e1f2ce62198bc7ca40a1f5.nq.gz
     ├── 7414e2e40670938206048f446cb3024cdaacbf9c.nq.gz
     ├── 75ac0fc3ebf93ceca1dbcc1d9509f8deb4c3affe.nq.gz
     ├── 76538457532237d7d53b30004d7ab6d523f030d6.nq.gz
     ├── 765703fa44c1d5ebaaa6e8e37024d88be7d27140.nq.gz
+    ├── 7744180da490c80bd59286ac3e58dfc04399472f.nq.gz
     ├── 7976c3ac59f170caeadd1bf24394625943f3901c.nq.gz
     ├── 7a5fd7de82cd4146f10dd2e3d5ea0571622207aa.nq.gz
     ├── 7ed7149ad409a785ab439bce42c26a9bf62a7b86.nq.gz
+    ├── 7f0584eed98c0bf6d7e22fb8b3c4b84a860204f8.nq.gz
     ├── 7fc5f27289ac486f896c801bc2730e6110b48cb3.nq.gz
     ├── 84693e38995db3078ed089061f70f7e704f47064.nq.gz
     ├── 8475d96ffaa2dee1c2e143e0697ee1a6a35700e5.nq.gz
     ├── 8714597f0fa9955ecd302247e67d50054de34b76.nq.gz
     ├── 87e1197dc4705af35ccfffe3e0021dd70b096759.nq.gz
+    ├── 8866d3daca8fc8078977b6e117a5bb5250ab3055.nq.gz
     ├── 8886ff9bc0500b232fb569437c2baaa6929ee128.nq.gz
     ├── 8935576b3142595833d6e7976a22c089a35006ec.nq.gz
     ├── 89619a07cf8cbee4f456ce5f0593475381975cc9.nq.gz
@@ -180,6 +190,7 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
     ├── 9c5e5048e6e609191cc4999601fce8d2c2608ced.nq.gz
     ├── 9c9298b98341cf61d319617fb561f21390b36ca7.nq.gz
     ├── 9dca5b4379570ba1665b6f0fdec93f9cf2f377ec.nq.gz
+    ├── a19d0e58bd86f83e35fc0d51bf69ee4c1bf0c68b.nq.gz
     ├── a26ee1abccd3bb2852fc6be9407f058d44cf7d20.nq.gz
     ├── a33460282f28ba51b2a9a764e0da2fd0ac73a7e7.nq.gz
     ├── a4dff2e6f102b06ffbb09f9f7a93dfcacf4074d5.nq.gz
@@ -195,6 +206,7 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
     ├── b383ace58892c887c2ba0a2f3c3aac4562e9634e.nq.gz
     ├── b8ad8c71305d319695a90432e7b737af7ef9861e.nq.gz
     ├── b9af6705f2ce6cb289723646659dba43f29a5e4a.nq.gz
+    ├── bb4b270128ea32f5b26f476362cc234fe7218e39.nq.gz
     ├── bde16bc60ba280dae4718aceb3d653f64d61f6d4.nq.gz
     ├── be6d8f3bb80d9f5e2010c5a6154273811902161e.nq.gz
     ├── bf22612aa8a64e7c9c04d141563f7d4984ccb0c2.nq.gz
@@ -219,6 +231,7 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
     ├── d56dbe40cff2583b0711e2c4b9cfb6e5b3b4b605.nq.gz
     ├── d5b6305f36465f9f0321c0a0a4042087e2a885a9.nq.gz
     ├── d6e26ad3ec8ddebc798176e637ee8629e057390d.nq.gz
+    ├── d7066e4b257d42384f8d190322a6bdba1bb47171.nq.gz
     ├── d74e3882a10af676dbff53cc80a04a3b34104067.nq.gz
     ├── da6d0d6e82c85750e569217ff077db238aec28f9.nq.gz
     ├── db821d0e4ca8f4ad00d10058fd95bf1011c8e18e.nq.gz
@@ -228,22 +241,7 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
     ├── dea9365fd238f0c03c76f4aeb90ece4ea61a7a75.nq.gz
     ├── e0f182ad825603e7bc190d4926d477d6eaed3018.nq.gz
     ├── e1c637c875ac71c25dc896251e6d068e4ded8a49.nq.gz
-    ├── e217a2473b80967a92aa61dbf3d1a047b3217b50.nq.gz
-    ├── e3046a4731049c451b4a9bd8fb362854b86f4436.nq.gz
-    ├── e58d22b7e6345e19f3570b6af4792569261a5bfd.nq.gz
-    ├── eaa8b3051ead4a1476df1bbbb52c6f1ef3481416.nq.gz
-    ├── eae4a18e6db57148d0bea956e42f07aaef31bd24.nq.gz
-    ├── eebd04f21f7c725c8c04161de0abcfeac54e5ba2.nq.gz
-    ├── ef9e8caec1b116f1514e722011367bc9a13b7cd0.nq.gz
-    ├── f0ee64ea108f7286e6e89bbe66f58e75d80b15a1.nq.gz
-    ├── f1c6afcfdeb06ec863380940a919c276eba10643.nq.gz
-    ├── f5e328064876a59e4e797f9de07476893197e9d7.nq.gz
-    ├── f6c0ac0f190806c943322317fe49fb5cf26008c5.nq.gz
-    ├── f7a222d9059338081108b6f9ee560c89f406d786.nq.gz
-    ├── f7e31e0b830bc52be56ebdf538e3309723b98e7d.nq.gz
-    ├── fbaef6e4166b6cf131d34837718a101b8fe10d59.nq.gz
-    ├── fc3320c36f9690e6b057376d25368f7b0f142b61.nq.gz
-    └── fc866569a7bb087e2a529c58f76e5cdd87cb8af8.nq.gz
+    └── e217a2473b80967a92aa61dbf3d1a047b3217b50.nq.gz
 
 9 directories, 200 files
 ```
@@ -259,6 +257,7 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
 | `branch/` | Branch metadata. |
 | `tag/` | Tag metadata. |
 | `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
 
 ## Source repository
 
