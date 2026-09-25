@@ -1,0 +1,36 @@
+[2026-09-25T19:06:23Z] === ENRICH ITERATION 3 START | repo=repolex-ai/git-lex sha=0e1ae4b9 ===
+[2026-09-25T19:06:23Z] [iter=3] PHASE START: enrich repo=repolex-ai/git-lex sha=0e1ae4b9 runlog=/home/runner/work/forx/forx/storage/aggregate/lsp/logs/0e1ae4b9-enrich-iter-003.log output=/home/runner/work/forx/forx/storage/aggregate/lsp/0e1ae4b9510d699f3b78c432f3877d8c65cde634.nq.gz
+[2026-09-25T19:06:57Z] [iter=3] Step 1: Loading AST into disk-backed store mem_mb=79 MB
+[2026-09-25T19:07:05Z] [iter=3] AST store loaded triples=1126998 load_secs=7 mem_mb=866 MB
+[2026-09-25T19:07:05Z] [iter=3] Step 2: Finding LSP targets mem_mb=866 MB
+[2026-09-25T19:07:06Z] [iter=3] LSP targets found call_sites=12736 imports=172 extends=0 implements=0 secs=1
+[2026-09-25T19:07:07Z] [iter=3] Step 2.7: Building position index (one-shot, shared across resolvers) mem_mb=866 MB
+[2026-09-25T19:07:13Z] [iter=3] Position index built positions=75869 nodes_with_types=94400 secs=6 mem_mb=866 MB
+[2026-09-25T19:07:13Z] [iter=3] Step 3: Starting LSP resolution mem_mb=866 MB already_completed_types=[] already_completed_files=0
+[2026-09-25T19:07:13Z] [iter=3] Resolving target type target_type=call_site count=12736
+[2026-09-25T19:16:36Z] [iter=3] HEARTBEAT target_type=call_site elapsed_min=10.2 files_done=0 resolved=0 errors=0 current=src/kit.rs
+[2026-09-25T19:18:25Z] [iter=3] HEARTBEAT target_type=call_site elapsed_min=12.0 files_done=1 resolved=772 errors=131 current=src/lib.rs
+[2026-09-25T19:19:41Z] [iter=3] HEARTBEAT target_type=call_site elapsed_min=13.3 files_done=2 resolved=1396 errors=288 current=src/ontology.rs
+[2026-09-25T19:20:26Z] [iter=3] HEARTBEAT target_type=call_site elapsed_min=14.1 files_done=3 resolved=1774 errors=384 current=src/shacl.rs
+[2026-09-25T19:21:02Z] [iter=3] HEARTBEAT target_type=call_site elapsed_min=14.7 files_done=4 resolved=2257 errors=461 current=src/sync.rs
+[2026-09-25T19:21:57Z] [iter=3] HEARTBEAT target_type=call_site elapsed_min=15.6 files_done=5 resolved=2797 errors=579 current=src/spo_events.rs
+[2026-09-25T19:22:56Z] [iter=3] HEARTBEAT target_type=call_site elapsed_min=16.5 files_done=6 resolved=3355 errors=698 current=src/extraction.rs
+[2026-09-25T19:23:30Z] [iter=3] HEARTBEAT target_type=call_site elapsed_min=17.1 files_done=9 resolved=3907 errors=771 current=src/gitlexd/daemon.rs
+[2026-09-25T19:24:21Z] [iter=3] HEARTBEAT target_type=call_site elapsed_min=18.0 files_done=11 resolved=4502 errors=881 current=src/query.rs
+[2026-09-25T19:25:00Z] [iter=3] HEARTBEAT target_type=call_site elapsed_min=18.6 files_done=13 resolved=4835 errors=963 current=src/nquad.rs
+[2026-09-25T19:25:50Z] [iter=3] HEARTBEAT target_type=call_site elapsed_min=19.5 files_done=14 resolved=5519 errors=1070 current=src/save.rs
+[2026-09-25T19:26:35Z] [iter=3] HEARTBEAT target_type=call_site elapsed_min=20.2 files_done=15 resolved=6081 errors=1167 current=src/kit_cmds.rs
+[2026-09-25T19:27:40Z] [iter=3] HEARTBEAT target_type=call_site elapsed_min=21.3 files_done=16 resolved=6571 errors=1307 current=src/resolve.rs
+[2026-09-25T19:28:11Z] [iter=3] HEARTBEAT target_type=call_site elapsed_min=21.8 files_done=20 resolved=6840 errors=1371 current=src/context.rs
+[2026-09-25T19:29:02Z] [iter=3] HEARTBEAT target_type=call_site elapsed_min=22.7 files_done=22 resolved=7395 errors=1481 current=tests/kits_from_repo_yml.rs
+[2026-09-25T19:29:41Z] [iter=3] HEARTBEAT target_type=call_site elapsed_min=23.3 files_done=26 resolved=7744 errors=1562 current=src/bin/gitlexd.rs
+[2026-09-25T19:30:20Z] [iter=3] HEARTBEAT target_type=call_site elapsed_min=24.0 files_done=29 resolved=8039 errors=1638 current=src/harness/mod.rs
+[2026-09-25T19:31:14Z] [iter=3] HEARTBEAT target_type=call_site elapsed_min=24.9 files_done=33 resolved=8568 errors=1754 current=src/session.rs
+[2026-09-25T19:31:51Z] [iter=3] Target type resolved target_type=call_site resolved=9013 errors=1831 secs=1478 mem_mb=866 MB
+[2026-09-25T19:31:51Z] [iter=3] Resolving target type target_type=import_statement count=172
+[2026-09-25T19:31:53Z] [iter=3] HEARTBEAT target_type=import_statement elapsed_min=25.5 files_done=0 resolved=0 errors=0 current=src/context.rs
+[2026-09-25T19:32:23Z] [iter=3] HEARTBEAT target_type=import_statement elapsed_min=26.0 files_done=2 resolved=9 errors=0 current=src/kit.rs
+[2026-09-25T19:32:27Z] [iter=3] Target type resolved target_type=import_statement resolved=172 errors=0 secs=36 mem_mb=866 MB
+[2026-09-25T19:32:57Z] [iter=3] Step 5: Writing final enrichment file triples=95230
+[2026-09-25T19:32:58Z] [iter=3] Enrichment file written path=/home/runner/work/forx/forx/storage/aggregate/lsp/0e1ae4b9510d699f3b78c432f3877d8c65cde634.nq.gz size_kb=1769
+[2026-09-25T19:32:58Z] [iter=3] PHASE END: enrich elapsed_s=1596 elapsed_min=26.6 total_triples=95230
