@@ -197,6 +197,11 @@
       "@id": "https://repolex.ai/r/repolex-ai/git-lex/commit/b3b203a1761748856474ae664c84b3adb3b3155b",
       "git:hexsha": "b3b203a1761748856474ae664c84b3adb3b3155b",
       "repolex:parseStatus": "metadata_complete"
+    },
+    {
+      "@id": "https://repolex.ai/r/repolex-ai/git-lex/commit/5576a1ac8e97985802be234ca19497c974c4cf54",
+      "git:hexsha": "5576a1ac8e97985802be234ca19497c974c4cf54",
+      "repolex:parseStatus": "metadata_complete"
     }
   ]
 }
