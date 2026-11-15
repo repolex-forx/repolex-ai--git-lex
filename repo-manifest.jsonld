@@ -224,8 +224,8 @@
       "repolex:parseStatus": "metadata_complete"
     },
     {
-      "@id": "https://repolex.ai/r/repolex-ai/git-lex/commit/3ce7fe3f8b96ea85e4a1337e3856d5a0f0e5ab14",
-      "git:hexsha": "3ce7fe3f8b96ea85e4a1337e3856d5a0f0e5ab14",
+      "@id": "https://repolex.ai/r/repolex-ai/git-lex/commit/3e726b96b34e42bcd354e7d202f695632b510ec2",
+      "git:hexsha": "3e726b96b34e42bcd354e7d202f695632b510ec2",
       "repolex:parseStatus": "metadata_complete"
     }
   ]
